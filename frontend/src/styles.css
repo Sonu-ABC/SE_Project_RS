@@ -1,0 +1,735 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap");
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #25321e;
+  background: #f7f8f2;
+}
+.auth-page {
+  min-height: 100vh;
+  background: #e9f0df;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.auth-card {
+  background: white;
+  width: min(430px, 100%);
+  padding: 42px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px #5b7e3c22;
+}
+.auth-brand {
+  color: #5b7e3c;
+  margin-bottom: 28px;
+}
+.auth-card h1 {
+  font-size: 30px;
+  margin: 8px 0;
+}
+.auth-card form {
+  display: grid;
+  gap: 12px;
+  margin: 25px 0 14px;
+}
+.auth-card input,
+.auth-card select {
+  font: inherit;
+  padding: 13px;
+  border: 1px solid #dce5d5;
+  border-radius: 8px;
+  background: white;
+}
+.auth-submit {
+  width: 100%;
+}
+.link {
+  border: 0;
+  background: transparent;
+  color: #5b7e3c;
+  font-weight: 700;
+  cursor: pointer;
+}
+.logout {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid #789762;
+  background: transparent;
+  color: white;
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.payment-summary {
+  background: white;
+  border: 2px solid #dbe8cf;
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total {
+  font-size: 30px;
+  color: #5b7e3c;
+  display: block;
+  margin: 8px 0 4px;
+}
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #25321e;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.new-bill {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.new-bill > div {
+  flex: 1;
+}
+.add:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.food-overlay {
+  padding: 78px 16px 18px !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 9, 0),
+    rgba(8, 12, 9, 0.14) 25%,
+    rgba(8, 12, 9, 0.82) 100%
+  ) !important;
+  backdrop-filter: blur(4px) !important;
+}
+.foodbody {
+  bottom: 82px !important;
+}
+.food {
+  position: relative;
+  height: 390px;
+  min-height: 390px;
+  background: #dfe5d9;
+}
+.foodpic {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100% !important;
+}
+.foodpic::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 155px;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 9, 0),
+    rgba(8, 12, 9, 0.18) 22%,
+    rgba(8, 12, 9, 0.82) 100%
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
+  pointer-events: none;
+}
+.foodbody {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 62px;
+  z-index: 3;
+  color: #fff;
+}
+.foodbody .muted {
+  color: rgba(255, 255, 255, 0.82);
+}
+.foodbody strong {
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+}
+.food .add {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  width: calc(100% - 32px);
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(3px);
+}
+.food-overlay {
+  padding: 25px 16px 12px !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 9, 0),
+    rgba(8, 12, 9, 0.12) 35%,
+    rgba(8, 12, 9, 0.78) 100%
+  ) !important;
+  backdrop-filter: blur(3px) !important;
+  z-index: 2;
+}
+.price-input {
+  width: 130px;
+  border: 1px solid #dce5d5;
+  border-radius: 7px;
+  padding: 9px;
+  font: inherit;
+}
+.report-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+.profit-bars span {
+  background: #5b7e3c !important;
+}
+.expense-bars span {
+  background: #ff9d23 !important;
+}
+.foodpic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.foodpic {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  background: #dfe5d9;
+}
+.food-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 44px 16px 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 9, 0),
+    rgba(8, 12, 9, 0.18) 18%,
+    rgba(8, 12, 9, 0.78) 100%
+  );
+  color: #fff;
+  pointer-events: none;
+  backdrop-filter: blur(14px);
+}
+.food-overlay strong {
+  font-size: 17px;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px #000;
+  display: block;
+}
+.food-overlay span {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.76);
+}
+.food-overlay b {
+  font-size: 18px;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px #000;
+}
+.payment-details {
+  flex: 1;
+}
+.checkout-items {
+  max-width: 520px;
+  margin: 14px 0 22px;
+}
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf1e9;
+  padding: 9px 0;
+  color: #34422c;
+}
+.checkout-item small {
+  color: #8b9685;
+  margin-left: 5px;
+}
+.payment-summary > .primary {
+  margin-left: 28px;
+  min-width: 160px;
+}
+/* Final food-card overlay tuning */
+.food-overlay {
+  padding: 78px 16px 18px !important;
+  backdrop-filter: blur(4px) !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 9, 0),
+    rgba(8, 12, 9, 0.14) 25%,
+    rgba(8, 12, 9, 0.82) 100%
+  ) !important;
+}
+.foodbody {
+  bottom: 82px !important;
+}
+.food-overlay {
+  bottom: 52px !important;
+  z-index: 2;
+  padding: 62px 16px 12px !important;
+}
+.foodbody {
+  bottom: 104px !important;
+  z-index: 5;
+}
+/* Keep the image, overlay, and action button in separate layout areas. */
+.food {
+  height: auto;
+  min-height: 0;
+}
+.foodpic {
+  position: relative;
+  inset: auto;
+  height: 320px !important;
+}
+.foodpic::after {
+  display: none;
+}
+.food-overlay {
+  bottom: 0 !important;
+  z-index: 2;
+  padding: 72px 16px 16px !important;
+}
+.food .add {
+  position: static;
+  width: 100%;
+  height: 52px;
+  margin: 0;
+  border: 0;
+  border-radius: 0 0 14px 14px;
+  background: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: linear-gradient(90deg, #eec5845b 33%, #eec5845b 20%, #eec5845b 18%, #eec5845b  14%, rgba(9, 54, 4, 0) 100%);
+  background-attachment: fixed;
+}
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+aside {
+  width: 235px;
+  background: #5b7e3c;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.muted {
+  color: #849080;
+  font-size: 13px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #8c9784;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+aside .muted {
+  color: #c5d1ba;
+  margin: 34px 12px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+nav button {
+  border: 0;
+  background: transparent;
+  color: #dce7d4;
+  text-align: left;
+  padding: 13px 14px;
+  border-radius: 9px;
+  font: inherit;
+  cursor: pointer;
+}
+nav button.active,
+nav button:hover {
+  background: #486a2f;
+  color: white;
+}
+.rolebox {
+  margin-top: auto;
+  background: #496b31;
+  padding: 13px;
+  border-radius: 10px;
+}
+.rolebox small {
+  display: block;
+  font-size: 9px;
+  color: #c9d6c0;
+  margin-bottom: 8px;
+}
+.rolebox select {
+  background: transparent;
+  color: white;
+  border: 0;
+  font-weight: 600;
+  width: 100%;
+}
+main {
+  flex: 1;
+  padding: 34px 52px;
+  max-width: 1250px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 28px;
+}
+h1 {
+  font-size: 32px;
+  margin: 0;
+}
+h2 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.balance {
+  background: white;
+  border-radius: 10px;
+  padding: 10px 18px;
+  min-width: 180px;
+}
+.balance span,
+.balance strong {
+  display: block;
+}
+.balance span {
+  font-size: 11px;
+  color: #8c9784;
+}
+.balance strong {
+  font-size: 18px;
+  margin-top: 4px;
+}
+.hero {
+  background: #ccdeb5;
+  border-radius: 18px;
+  padding: 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.hero h2 {
+  font-family: "Playfair Display";
+  font-size: 34px;
+  margin: 12px 0;
+}
+.hero em {
+  color: #5b7e3c;
+}
+.hero p {
+  color: #68745e;
+}
+.hero-art {
+  font-size: 92px;
+}
+.pill {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #5b7e3c;
+  background: #d4e5bd;
+  border-radius: 30px;
+  padding: 7px 11px;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 16px;
+}
+.section-head span {
+  font-size: 12px;
+  color: #8c9784;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.food,
+.panel,
+.stat {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #edf0e8;
+}
+.food {
+  overflow: hidden;
+  min-height: 0;
+}
+.foodpic {
+  height: 220px;
+  display: grid;
+  place-items: center;
+  font-size: 70px;
+}
+.p0 {
+  background: #fff0ce;
+}
+.p1 {
+  background: #ffe6d0;
+}
+.p2 {
+  background: #f7d8c8;
+}
+.foodbody {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.foodbody strong {
+  color: #5b7e3c;
+}
+.add {
+  margin: 0 16px 16px;
+  width: calc(100% - 32px);
+  padding: 10px;
+  border: 1px solid #d8e2d0;
+  background: white;
+  border-radius: 8px;
+  color: #5b7e3c;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cartbar {
+  position: fixed;
+  left: calc(235px + 52px);
+  right: 52px;
+  bottom: 22px;
+  z-index: 20;
+  background: #25321e;
+  color: white;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.cartbar .muted {
+  color: #b5c1ab;
+}
+.primary {
+  background: #ffd65a;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.toast {
+  background: #e8f3df;
+  color: #42632a;
+  border: 1px solid #c9dfb5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.stat {
+  padding: 22px;
+}
+.stat small,
+.stat strong,
+.stat span {
+  display: block;
+}
+.stat strong {
+  font-size: 28px;
+  margin: 12px 0 6px;
+}
+.stat span {
+  font-size: 12px;
+  color: #5b7e3c;
+}
+.stat.orange {
+  border-top: 4px solid #ff9d23;
+}
+.stat.red {
+  border-top: 4px solid #ea5252;
+}
+.stat.green {
+  border-top: 4px solid #5b7e3c;
+}
+.stat.yellow {
+  border-top: 4px solid #ffd65a;
+}
+.panel {
+  padding: 20px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 4px;
+  border-top: 1px solid #eef1ea;
+}
+.row > div {
+  flex: 1;
+}
+.row small {
+  display: block;
+  color: #899385;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot.orange {
+  background: #ff9d23;
+}
+.outline {
+  border: 1px solid #d9e3d2;
+  background: white;
+  color: #5b7e3c;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+.status {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 6px 9px;
+  border-radius: 12px;
+}
+.pending {
+  background: #fff0d1;
+  color: #af6900;
+}
+.arrived,
+.paid {
+  background: #e7f3dd;
+  color: #4c762d;
+}
+.chart {
+  margin-top: 24px;
+  box-shadow: 0 12px 30px #25321e44;
+}
+.bars {
+  height: 230px;
+  display: flex;
+  align-items: end;
+  gap: 35px;
+  padding: 20px 30px 0;
+}
+.bars > div {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+}
+.bars span {
+  width: 45px;
+  max-height: 190px;
+  background: #5b7e3c;
+  border-radius: 7px 7px 0 0;
+}
+.bars small {
+  color: #899385;
+}
+@media (max-width: 800px) {
+  aside {
+    width: 70px;
+    padding: 20px 10px;
+  }
+  .brand {
+    font-size: 0;
+  }
+  .brand span {
+    font-size: 24px;
+  }
+  aside .muted,
+  .rolebox,
+  nav button {
+    font-size: 0;
+  }
+  nav button {
+    text-align: center;
+  }
+  main {
+    padding: 24px 18px;
+  }
+  .grid,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 24px;
+  }
+  .hero-art {
+    font-size: 50px;
+  }
+  .balance {
+    display: none;
+  }
+  main {
+    padding-bottom: 110px;
+  }
+  .cartbar {
+    left: 18px;
+    right: 18px;
+    bottom: 14px;
+  }
+  .report-charts {
+    grid-template-columns: 1fr;
+  }
+}
