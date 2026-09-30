@@ -327,7 +327,14 @@
 }
 body {
   margin: 0;
-  background: linear-gradient(90deg, #eec5845b 33%, #eec5845b 20%, #eec5845b 18%, #eec5845b  14%, rgba(9, 54, 4, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    #eec5845b 33%,
+    #eec5845b 20%,
+    #eec5845b 18%,
+    #eec5845b 14%,
+    rgba(9, 54, 4, 0) 100%
+  );
   background-attachment: fixed;
 }
 .app {
